@@ -112,8 +112,8 @@ public class SelectRoomView extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy(){
-        super.onDestroy();
+    protected void onStop(){
+        super.onStop();
         myHotelApp.saveRoomManagement();
     }
 

@@ -20,8 +20,8 @@ public class FailureEquipmentListView extends AppCompatActivity {
         listTextView = findViewById(R.id.listTextView);
     }
     @Override
-    protected void onDestroy(){
-        super.onDestroy();
+    protected void onStop(){
+        super.onStop();
         myHotelApp.saveRoomManagement();
     }
 
