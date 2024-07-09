@@ -1,5 +1,10 @@
 package jp.ac.ritsumei.ise.phy.exp2.is0666fv.hotelmanagement;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+
 public class RoomManagement {
     private Room[][] rooms = new Room[8][15];
     RoomManagement(){
@@ -22,6 +27,23 @@ public class RoomManagement {
         int r = roomNumber % 100; //部屋の下二桁をroomNumberから求める
         return this.rooms[f][r].getStatus();
     }
+
+    // RoomManagementの状態をJSON形式に変換して保存
+    public String toJson() {
+        Gson gson = new Gson();
+        return gson.toJson(this.rooms);
+    }
+
+    // JSON形式のデータからRoomManagementの状態を復元
+    public static RoomManagement fromJson(String json) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<Room[][]>() {}.getType();
+        Room[][] rooms = gson.fromJson(json, type);
+        RoomManagement roomManagement = new RoomManagement();
+        roomManagement.rooms = rooms;
+        return roomManagement;
+    }
+
 
 
 
