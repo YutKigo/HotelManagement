@@ -14,8 +14,8 @@ public class SelectFloorView extends AppCompatActivity {
         setContentView(R.layout.activity_select_floor_view);
     }
     @Override
-    protected void onStop(){
-        super.onStop();
+    protected void onPause(){
+        super.onPause();
         myHotelApp.saveRoomManagement();
     }
 

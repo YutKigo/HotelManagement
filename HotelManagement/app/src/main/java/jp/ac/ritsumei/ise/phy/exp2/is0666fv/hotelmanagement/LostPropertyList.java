@@ -21,8 +21,8 @@ public class LostPropertyList extends AppCompatActivity {
         listTextView2 = findViewById(R.id.listTextView2);
     }
     @Override
-    protected void onStop(){
-        super.onStop();
+    protected void onPause(){
+        super.onPause();
         myHotelApp.saveRoomManagement();
     }
 

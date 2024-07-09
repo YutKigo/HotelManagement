@@ -120,8 +120,8 @@ public class HousekeepingView extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop(){
-        super.onStop();
+    protected void onPause(){
+        super.onPause();
         myHotelApp.saveRoomManagement();
     }
 
