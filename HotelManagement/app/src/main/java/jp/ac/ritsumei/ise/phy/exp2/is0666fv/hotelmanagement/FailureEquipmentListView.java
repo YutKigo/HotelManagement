@@ -18,6 +18,7 @@ public class FailureEquipmentListView extends AppCompatActivity {
         setContentView(R.layout.activity_failure_equipment_list_view);
 
         listTextView = findViewById(R.id.listTextView);
+        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
     @Override
     protected void onPause(){

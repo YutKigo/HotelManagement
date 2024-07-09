@@ -37,6 +37,8 @@ public class RoomSetupView extends AppCompatActivity {
         /* 部屋番号表示のTextViewを取得し部屋番号を表示 */
         roomNumberDisplay = findViewById(R.id.roomNumberDisplay);
         roomNumberDisplay.setText(String.valueOf(selectedFloor * 100 + selectedRoomNumber));
+
+        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
 
     //ページが開かれた時に必ず呼び出され, 視覚的効果の更新などを行う

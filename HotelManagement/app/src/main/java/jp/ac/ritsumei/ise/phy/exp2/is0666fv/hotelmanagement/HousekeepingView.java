@@ -88,6 +88,7 @@ public class HousekeepingView extends AppCompatActivity {
 
         /* EditTextを取得 */
         nameEditText = findViewById(R.id.nameEditText);
+        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
 
     public void onResume(){

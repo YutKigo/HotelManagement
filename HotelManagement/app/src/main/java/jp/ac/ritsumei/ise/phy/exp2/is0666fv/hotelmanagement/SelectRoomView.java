@@ -70,6 +70,8 @@ public class SelectRoomView extends AppCompatActivity {
         for(int i = 0; i < roomButton.length; i++){
             //roomButton[i].setImageResource(R.drawble.ファイル名);
         }
+
+        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
 
     //onResume method:ページが開かれた時に必ず呼び出され, 視覚的効果の更新などを行う

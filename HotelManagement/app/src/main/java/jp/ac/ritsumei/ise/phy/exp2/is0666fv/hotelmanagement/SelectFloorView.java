@@ -12,6 +12,8 @@ public class SelectFloorView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_floor_view);
+
+        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
     @Override
     protected void onPause(){
