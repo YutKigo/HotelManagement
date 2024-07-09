@@ -7,12 +7,18 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SelectFloorView extends AppCompatActivity {
-
+    private MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_floor_view);
     }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        myHotelApp.saveRoomManagement();
+    }
+
 
     //各回のselectRoomViewへの遷移処理: Intentで選択されたフロアを送信
     public void floor2Tapped(View view){

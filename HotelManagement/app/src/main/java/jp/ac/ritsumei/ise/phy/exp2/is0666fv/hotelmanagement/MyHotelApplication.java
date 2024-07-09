@@ -21,7 +21,7 @@ public class MyHotelApplication extends Application {
         return this.roomManagement;
     }
 
-    private void saveRoomManagement() {
+    public void saveRoomManagement() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(KEY_ROOM_MANAGEMENT, roomManagement.toJson());

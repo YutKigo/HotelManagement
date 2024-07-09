@@ -7,10 +7,17 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        myHotelApp.saveRoomManagement();
     }
 
     //Menu:Room Management,

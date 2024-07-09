@@ -22,6 +22,7 @@ public class RoomSetupView extends AppCompatActivity {
     private Button cleaningStartButton;
     private EditText failureEquipmentEditText;
     private EditText lostPropertyEditText;
+    private MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
 
 
     @Override
@@ -50,6 +51,12 @@ public class RoomSetupView extends AppCompatActivity {
         Room room = roomManagement.getRoomInformation(selectedRoomNumber, selectedFloor);
         roomStatusDisplay = (TextView) findViewById(R.id.roomStatusDisplay);
         roomStatusDisplay.setText(room.getStatus());
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        myHotelApp.saveRoomManagement();
     }
 
     public void checkedInButtonTapped(View view){

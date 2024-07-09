@@ -14,6 +14,7 @@ public class SelectRoomView extends AppCompatActivity {
     private TextView roomNumberDisplay[] = new TextView[15];
     private ImageButton roomButton[] = new ImageButton[15];
     private int selectedFloor;
+    private MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,12 @@ public class SelectRoomView extends AppCompatActivity {
 
 
         }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        myHotelApp.saveRoomManagement();
     }
 
     public void roomButtonTapped(View view){
