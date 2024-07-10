@@ -1,5 +1,7 @@
 package jp.ac.ritsumei.ise.phy.exp2.is0666fv.hotelmanagement;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -27,6 +29,33 @@ public class RoomManagement {
         int r = roomNumber % 100; //部屋の下二桁をroomNumberから求める
         return this.rooms[f][r].getStatus();
     }
+
+    public void initialRoomManagement() {
+        try {
+            if (rooms == null) {
+                Log.e("RoomManagement", "Rooms array is null");
+                return;
+            }
+            for (int i = 0; i < rooms.length; i++) {
+                if (rooms[i] == null) {
+                    Log.e("RoomManagement", "Rooms array at index " + i + " is null");
+                    continue;
+                }
+                for (int j = 0; j < rooms[i].length; j++) {
+                    if (rooms[i][j] == null) {
+                        Log.e("RoomManagement", "Room " + ((i + 2) * 100 + j) + " is null");
+                    } else {
+                        rooms[i][j].initialRoom();
+                        Log.d("RoomManagement", "Room " + ((i + 2) * 100 + j) + " initialized");
+                    }
+                }
+            }
+            Log.d("RoomManagement", "All rooms initialized");
+        } catch (Exception e) {
+            Log.e("RoomManagement", "Error initializing rooms", e);
+        }
+    }
+
 
     // RoomManagementの状態をJSON形式に変換して保存
     public String toJson() {

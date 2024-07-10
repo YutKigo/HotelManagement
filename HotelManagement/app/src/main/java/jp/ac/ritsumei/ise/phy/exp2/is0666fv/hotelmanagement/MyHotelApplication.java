@@ -37,4 +37,8 @@ public class MyHotelApplication extends Application {
             roomManagement = new RoomManagement();
         }
     }
+
+    public void initialize(){
+        roomManagement.initialRoomManagement();
+    }
 }

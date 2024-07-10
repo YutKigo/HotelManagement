@@ -132,4 +132,19 @@ public class Room implements Serializable {
     public void setLostProperty(String lostProperty){
         this.lostProperty = lostProperty;
     }
+
+    public void initialRoom(){
+        this.status = "Vacant";
+        this.stuffName = "";
+        this.cleaningStartTime = "";
+        this.cleaningFinishTime = "";
+        this.isCleaningStartButtonTapped = false; //CleaningStartButtonが押されたかどうかを判定
+        this.isCleaningFinishButtonTapped = false; //CleaningFinishButtonが押されたかどうかを判定
+        this.isInspectionStartButtonTapped = false; //InspectionStartButtonが押されたかどうかを判定
+        this.isInspectionFinishButtonTapped = true;
+        this.isCheckedBED = false; //BEDのCheckBoxがチェックされたかどうかを判定
+        this.isCheckedSHOWER = false;
+        this.lostProperty = "";
+        this.failureEquipment = "";
+    }
 }
