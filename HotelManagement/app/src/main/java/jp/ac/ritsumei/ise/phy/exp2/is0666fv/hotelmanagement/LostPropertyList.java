@@ -42,8 +42,9 @@ public class LostPropertyList extends AppCompatActivity {
                 /* 忘れ物報告がnullでなければTextViewに表示 */
                 String reportText = "";
                 if(room.getLostProperty() != null){
-                    reportText = room.getLostProperty() + "\n";
+                    reportText = room.getLostProperty();
                     listTextView2.append(reportText);
+                    listTextView2.append("\n");
                 }
             }
         }
