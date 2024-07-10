@@ -39,8 +39,8 @@
 
         <Button
             android:id="@+id/initialButton"
-            android:layout_width="163dp"
-            android:layout_height="106dp"
+            android:layout_width="135dp"
+            android:layout_height="57dp"
             android:onClick="initialButtonTapped"
             android:text="ALL RESET"
             app:layout_constraintBottom_toBottomOf="parent"
