@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FailureEquipmentListView extends AppCompatActivity {
     private TextView listTextView;
-    private MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,13 +17,8 @@ public class FailureEquipmentListView extends AppCompatActivity {
         setContentView(R.layout.activity_failure_equipment_list_view);
 
         listTextView = findViewById(R.id.listTextView);
-        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
-    @Override
-    protected void onPause(){
-        super.onPause();
-        myHotelApp.saveRoomManagement();
-    }
+
 
 
 
@@ -54,6 +48,9 @@ public class FailureEquipmentListView extends AppCompatActivity {
     }
 
     public void backButtonTapped(View view){
+        MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
+        myHotelApp.saveRoomManagement();
+
         finish();
     }
 

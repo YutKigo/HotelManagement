@@ -12,15 +12,7 @@ public class SelectFloorView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_floor_view);
-
-        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
-    @Override
-    protected void onPause(){
-        super.onPause();
-        myHotelApp.saveRoomManagement();
-    }
-
 
     //各回のselectRoomViewへの遷移処理: Intentで選択されたフロアを送信
     public void floor2Tapped(View view){
@@ -64,6 +56,8 @@ public class SelectFloorView extends AppCompatActivity {
         startActivity(intent);
     }
     public void buckButtonTapped(View view){
+        MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
+        myHotelApp.saveRoomManagement();
         finish();
     }
 }

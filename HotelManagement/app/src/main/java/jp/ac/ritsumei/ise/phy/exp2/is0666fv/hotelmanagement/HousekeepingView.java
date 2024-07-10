@@ -88,7 +88,6 @@ public class HousekeepingView extends AppCompatActivity {
 
         /* EditTextを取得 */
         nameEditText = findViewById(R.id.nameEditText);
-        myHotelApp = (MyHotelApplication) getApplicationContext();
     }
 
     public void onResume(){
@@ -118,12 +117,6 @@ public class HousekeepingView extends AppCompatActivity {
 
 
 
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        myHotelApp.saveRoomManagement();
     }
 
 
@@ -282,6 +275,8 @@ public class HousekeepingView extends AppCompatActivity {
 
 
     public void backButtonTapped(View view){
+        MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
+        myHotelApp.saveRoomManagement();
         finish();
     }
 }

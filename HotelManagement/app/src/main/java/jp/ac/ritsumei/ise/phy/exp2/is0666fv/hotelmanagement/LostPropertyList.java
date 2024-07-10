@@ -19,14 +19,8 @@ public class LostPropertyList extends AppCompatActivity {
         setContentView(R.layout.activity_lost_property_list);
 
         listTextView2 = findViewById(R.id.listTextView2);
+    }
 
-        myHotelApp = (MyHotelApplication) getApplicationContext();
-    }
-    @Override
-    protected void onPause(){
-        super.onPause();
-        myHotelApp.saveRoomManagement();
-    }
 
 
 
@@ -56,6 +50,8 @@ public class LostPropertyList extends AppCompatActivity {
     }
 
     public void backButtonTapped(View view){
+        MyHotelApplication myHotelApp = (MyHotelApplication) getApplication();
+        myHotelApp.saveRoomManagement();
         finish();
     }
 }
